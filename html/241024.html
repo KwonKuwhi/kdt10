@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 주석 달기 ->드래그+(Ctrl+/)-->
+    <!-- h1 태그는 문서의 제목을 나타냄 -->
+    <h1>Hello World!</h1>
+    <p>코딩 시작!</p>
+    <hr>
+    <hr />
+    <!-- h1~h6 -->
+    <h1>h1</h1>
+    <h2>h2</h2>
+    <h3>h3</h3>
+    <h4>h4</h4>
+    <h5>h5</h5>
+    <h6>h6</h6>
+    <!-- 줄바꿈 break <br>
+    본문 paragraph <p>-->
+    <p>p태그,<br>
+        본문을 뜻합니다.
+    </p>
+
+    <!-- 리스트
+    ul: 순서없는 리스트
+    ol: 순서 있는 리스트
+    속성: type(ul-disc, circle, square,none // ol-1, A, a, I, i), start, reversed... -->
+    <ul type="none">
+        과일
+        <li>사과</li>
+        <li>바나나</li>
+        <li>파인애플</li>
+    </ul>
+    <ol type="I" start="1" reversed>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ol>
+    <!-- 문자꾸미기 -->
+    <p>live server</p>
+    <b>b태그:두껍게</b><br>
+    <strong>strong 태그: 두껍게!(semantic)</strong><br>
+    <i>i 태그:이탤릭</i><br>
+    <em>em 태그: 강조+기울여서, sementic </em><br>
+    <del>del 태그: 중간 줄</del><br>
+    <u>u 태그:밑 줄!</u><br>
+
+
+
+    <!-- Ctrl +A // Ctrl+k+f(자동 들여쓰기) -->
+
+    <!-- 이미지 추가
+alt 속성이 중요 로드가 안될 경우 뿐만 아니라 음성 안내에도 사용
+
+a 태그
+href: 이동할 페이지 링크
+target: _blank(새로운 탭), _self(현재 탭, 기본값)-->
+
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAA8FBMVEX////kTORK5CYII="
+        alt="html5"><br>
+    <!-- 상대경로와 절대경로
+1.상대경로 -->
+    <img src="./고양이.jpeg" alt="고양이" width="30px"><br>
+    <!-- 2.절대경로 (라이브서버에서 전체 경로X ->)-->
+    <img src="\html\고양이.jpeg" alt="고양이" height="50">
+    <hr>
+    <!-- a태그 -->
+    <a href="https://velog.io/">벨로그</a><br>
+    <!-- form 태그 -->
+    <form>
+        <!-- input 태그 -->
+        <input type="button" value="버튼"><br>
+        <input type="text" placeholder="ID"><br>
+        <input type="password" placeholder="password"><br>
+        <input type="checkbox" name="fruits" value="apple">apple
+        <input type="checkbox" name="fruits" value="banana">banana
+        <input type="checkbox" name="fruits" value="pineapple">pineapple
+        (복수선택)<br>
+        <input type="radio" name="점심메뉴" value="파스타" checked>파스타
+        <input type="radio" name="점심메뉴" value="보쌈">보쌈
+        <input type="radio" name="점심메뉴" value="떡볶이">떡볶이
+        (하나만 선택)<br>
+        <input type="date">
+        <input type="datetime-local"><br>
+        <select name="menu">
+            <optgroup label="coffee">
+                <option value="아메리카노" selected>아메리카노</option>
+                <option value="바닐라라떼">바닐라라떼</option>
+            </optgroup>
+            <optgroup label="ade">
+                <option value="자몽">자몽</option>
+                <option value="레몬" disabled>레몬</option>
+            </optgroup>
+        </select>
+    </form>
+<br>
+<br>
+
+
+    <table border="1" cellspacing="0" cellpadding="5" width="300 "height="100">
+        <tr>
+            <th>이름</th>
+            <th>나이</th>
+            <th>전화번호</th>
+        </tr>
+        <tr>
+            <td rowspan="2">권구휘</td>
+            <td>25</td>
+            <td>010-1111-1111</td>
+        </tr>
+        <tr>
+            <td>권구휘</td>
+            <td>25</td>
+            <td>010-1111-1111</td>
+        </tr>
+    </table>
+<!-- F12 개발자도구 -->
+</body>
+
+</html>
