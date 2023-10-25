@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 선택자</title>
+    <style>
+        /* 기본(단일 선택자) */
+        /*태그 선택자: 태그이름
+        전체 선택자: *
+        클래스 선택자: .클래스 이름
+        ID 선택자: #ID*/
+        li {
+            color: rgb(2, 2, 26);
+        }
+        .orange{
+            color: orange;
+        }
+        #pink{
+            color: pink;
+        }
+
+        /* 복합 선택자
+        일치 선택자: 붙여서 쓰기
+        자식 선택자:  >
+        하위(후손)선택자: 띄어쓰기
+        인접 형제 선택자: +
+        일반 형제 선택자: ~ */
+        span.orange{
+            color: rgb(98, 0, 255);
+        }
+        ul > .orange{
+            background-color: aqua;
+        }
+        div .orange{
+            text-decoration: line-through;
+        }
+        .orange+ li{
+            color: rgb(0, 255, 64);
+        }
+        .orange~li{
+            color:deeppink;
+        }
+
+    </style>
+
+<body>
+    <div>
+        <ul>
+            <li>사과</li>
+            <li id="pink">딸기</li>
+            <li class="orange">오렌지</li>
+            <li>망고</li>
+            <li>포도</li>
+        </ul>
+    
+    <div>당근</div>
+    <p>토마토</p><span class="orange">오렌지</span>
+    <p>브로콜리</p>
+    </div>
+</body>
+
+</html>
