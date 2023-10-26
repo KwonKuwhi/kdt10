@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>231026</title>
+    <style>
+        /* 가상선택자 */
+        a:hover {
+            color: white !important;
+            background-color: black;
+        }
+
+        /*a:active {
+            color: pink;
+            background-color: white;
+        }
+
+        input:focus {
+            background-color: greenyellow;
+        }
+        
+        .fruits span:first-child{
+            color: red;
+        }
+        .fruits div:first-child{
+            color: red;
+        }
+        .fruits h3:last-child{
+            color:green;
+        }
+        .fruits *:nth-child(2){
+            color:darksalmon
+        }
+        .fruits *:nth-child(2n){
+            color:aquamarine;
+        }
+        .fruits *:nth-child(2n+1){
+            color:blue
+        }/*우선순위*/
+        .fruits *:not(span){
+            background-color: lightblue;
+            
+        }
+        
+        /*가상 요소 선택자 ::after or before*/
+        .fruits::before{
+            content:"과일 목록 시작"
+    
+        }
+        .fruits::after{
+            content:"과일 목록 끝"
+
+        }
+        /*속성 선택자*/
+        
+        
+        *:not([placeholder]){
+            background-color: lightgrey;
+        }
+        [readonly]{
+            background-color: blueviolet;
+        }
+        /*css선택자 우선순위*/
+        a:hover{
+            color:pink ;
+            background:black
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <a href="">hover: 마우스 커서가 올라가있는 동안></a>
+    <!--<br>
+    <a href="">active: 클릭하는 동안</a>
+    <br>
+
+    가상선택자_focus<input type="text">-->
+    <div class="fruits">
+        <div>1딸기</div>
+        <span>2수박</span>
+        <div>3자식 오렌지
+            <div>3-1하위 오렌지</div>
+        </div>
+        <p>4망고</p>
+        <h3>5사과</h3>
+        
+    </div>
+    <hr>
+    --속성 선택자--<br>
+
+    1<input type="text"><br>
+
+    2<input type="text" readonly>
+    패스워드<input type="password" placeholder="password">
+
+
+</body>
+
+</html>

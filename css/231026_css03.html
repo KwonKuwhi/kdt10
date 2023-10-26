@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
+    <title>css03</title>
+    <style>
+        @font-face {
+    font-family: 'KOTRAHOPE';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/KOTRAHOPE.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+        
+
+        .box {
+            width: fit-content;
+            height: fit-content;
+            font-size: 16px;
+            background-color: lightyellow;
+            font-weight: 900;
+            line-height: 2;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .google {
+            font-family: 'Agbalumo' ;
+        }
+        .noon{
+            font-family:'KOTRAHOPE' ;
+        }
+        .inline{
+            background-color: lightsteelblue;
+            /*width, height 사용불가*/
+
+        }
+        .block{
+            background-color: lightgreen;
+            height: 30px;
+            
+        }
+        .inline-block{
+            display: inline-block;
+            background-color: lightpink;
+            width: 100px;
+        }
+        .margin{
+            width: 20px;
+            height: 20px;
+            margin: 20px 30px 20px 40px;
+            padding: 10px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <!--line height-->
+    <div class="box">
+        <p>text</p>
+
+        <!--font family-->
+        <p class="google">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio inventore deleniti sapiente
+            sint consectetur porro, sit voluptas magni ducimus amet quisquam cum repellat, aut, enim itaque culpa ipsam
+            obcaecati ad?</p>
+        <p class="noon">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis possimus quo tempore praesentium
+            sequi vero quibusdam accusantium, a eveniet delectus quis commodi quam, quos eius voluptatem. Rem at facere
+            sapiente.</p>
+    </div>
+    <!--display: inline&block-->
+    <span class="inline">Hello</span>
+    <span class="inline">World</span>
+    <div class="block">Hello Block</div>
+    <div class="inline-block">inline</div>
+    <div class="inline-block">block</div>
+
+
+    <!--margin, padding-->
+    <div class="margin">월</div>
+    <div class="margin">화</div>
+    <div class="margin">수</div>
+    <div class="margin">목</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inline-block</title>
+    <style>
+        div{
+            width: auto;
+            height: 200px;
+            background-color: orange;
+        }
+        .inline-block{
+            width: 200px;
+            height: 100px;
+            display: inline-block;
+            margin-right: 30px;
+        }
+        #html{
+            background-color: lightblue;
+        }
+        #css{
+            background-color: green;
+        }
+        #javascript{
+            background-color: red;
+        }
+
+        /*
+        nth-child 선택자 이용할 수도 있음
+        */
+    </style>
+</head>
+<body>
+    <div>
+        <div class="inline-block" id="html">HTML</div>
+        <div class="inline-block" id="css">CSS</div>
+        <div class="inline-block" id="javascript">Javascript</div>
+    </div>
+</body>
+</html>

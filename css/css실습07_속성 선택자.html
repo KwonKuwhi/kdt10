@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속성 선택자</title>
+    <style>
+        [disabled]{
+            background-color: red;
+        }
+        [placeholder="이름"]{
+            background-color: orange;
+        }
+        *:not([placeholder]){
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="이름"></input>
+    <input type="password" value="pw"></input>
+    <input type="text" value="000-1234-5678"></input>
+    <input type="text" placeholder="핸드폰"></input>
+    <input type="text" placeholder="주민번호"  disabled></input>
+</body>
+</html>
