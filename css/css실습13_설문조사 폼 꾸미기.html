@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>설문조사</title>
+    <style>
+        @font-face {
+            font-family: 'TAEBAEKmilkyway';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/TAEBAEKmilkyway.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 30px;
+            font-family: 'TAEBAEKmilkyway';
+            
+        }
+        body {
+            border-style: solid;
+            border-width: 2px;
+            border-color: rgb(0, 0, 0);
+            margin: auto;
+        }
+        h3{
+            margin-left: 0;
+        }
+        .info{
+            display: inline;
+        } 
+        hr {
+            border-style: dotted;
+        }
+
+        .input {
+            margin: 6px;
+            padding: 3px;
+        }
+
+        .text {
+            border-radius: 5px;
+            border-style: inset;
+            border-width: 2px;
+            background-color: rgb(254, 255, 220);
+            overflow: auto;
+            opacity:0.7 ;
+            height: 20px;
+            padding: 5px;
+        }
+
+
+        .text:focus {
+            background-color: rgb(254, 255, 220);
+            opacity: 1;
+        }
+        [type='button']{
+            color: white;
+            font-weight: 700;
+            background-color: black;
+            border-style: outset;
+            border-radius: 5px;
+            border-width: 7px;
+            margin-left: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>설문조사</h1>
+    <hr>
+    <form>
+        <h3 class="info">이름</h3>
+        <input class="input text" type="text" placeholder="NAME">
+        <br>
+        <h3 class="info">이메일</h3><input class="input text" type="text" placeholder="E-MAIL">
+        <br>
+        <h3>나이</h3>
+        <input class="input check" type="radio" name="age" value="10대" checked>10대
+        <input class="input check" type="radio" name="age" value="20대">20대
+        <input class="input check" type="radio" name="age" value="30대">30대
+        <input class="input check" type="radio" name="age" value="40대">40대
+        <input class="input check" type="radio" name="age" value="50대">50대
+        <input class="input check" type="radio" name="age" value="60대 이상">60대 이상
+        <h3>원하는 강의 (복수응답 가능합니다.)</h3>
+        <input class="input check" type="checkbox" value="html" checked>html
+        <input class="input check" type="checkbox" value="javascript">javascript
+        <input class="input check" type="checkbox" value="css">css
+        <br>
+        <br>
+        <textarea class="input text" name="하고싶은 말" cols="60" rows="10" placeholder="하고 싶은 말을 써주세요"></textarea>
+        <br>
+        <input type="button" value="제출">
+
+    </form>
+</body>
+
+</html>

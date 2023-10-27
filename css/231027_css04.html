@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position</title>
+    <style>
+        body{
+            margin: 0;
+            background-color: orange;
+            height: 2000px;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            font-weight: 700;
+            text-align: center;
+            line-height: 100px;
+        }
+        /* static
+        기본값이기 떄문에 따로 작성하지 않음
+        인라인 요소는 왼쪽에서 오른쪽으로 쌓임
+        블록 요소는 위에서 아래로 쌓임*/ 
+        .static{
+            background-color: pink;
+        }
+        .relative{
+            position: relative;
+            
+            background-color: blue;
+        }
+        .absolute{
+            position: absolute;
+            bottom: 0px;
+            background-color: beige;
+            left: 200px;
+            /* 문서 흐름을 벗어나면 자기 자리가 없어짐
+            기준점은 static이 아닌 값을 갖는 제일 가까운 조상 기준
+            없으면 뷰포트 기준으로 배치 */
+        }
+        .fixed{
+            position: fixed;
+            background-color: yellow;
+            top: 500px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="static">static</div>
+    <div class="relative">relative</div>
+    
+    <div class="absolute">absolute</div>
+    <div class="fixed">fixed</div>
+    <div class="relative">1
+        <div class="absolute">2</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>231027_css03</title>
+    <style>
+        /*width와 height*/
+        /*border*/
+        .border {
+            margin: 10px;
+            border: 2px dashed black;
+            width: 200px;
+            height: 200px;
+            ;
+        }
+
+        .box-sizing {
+            width: 100px;
+            height: 100px;
+            padding: 20px;
+            border: 15px solid red;
+            background-color: orange;
+
+        }
+
+        .square {
+            width: 200px;
+            height: 200px;
+            border: 1px solid;
+            display: inline-block;
+            overflow: auto;
+        }
+
+        .d-none {
+            display: none;
+            background-color: red;
+        }
+
+        .invisible {
+            visibility: hidden;
+            background-color: orangered;
+        }
+
+        .opacity-0 {
+            opacity: 0;
+            background-color: tomato;
+        }
+    </style>
+</head>
+
+<body style="margin: 0;">
+    <div style="background-color: aquamarine; width: 100px; height: 100px;"></div> <!--width와 height
+    calc 사용시 띄어쓰기 주의!-->
+    <div style="background-color: lightpink; width:80vw; height: 20vw;"></div>
+    <div style="background-color: orange; width:60vw;max-width: 3000px; height: 20vx; min-height: 20pc;"></div>
+    <div class="border" style="box-sizing: border-box;"></div>
+    <!-- box-sizing -->
+    <div class="box-sizing" style="box-sizing: content-box;">content box</div>
+    <hr>
+    <div class="box-sizing" style="box-sizing: border-box;">border box</div>
+    <!-- 요소 사라지게 하기
+    visibility-> 속성이 남아있지 않음
+    opacity->속성이 남아있음 포커스 가능 -->
+    <div class="square">original</div>
+    <div class="square d-none">d-none</div>
+    <div class="square invisible">invisible</div>
+    <div class="square opacity-0">opacity-0</div>
+    <div class="square">original</div>
+
+
+    <!--overflow-->
+    <div class="square">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error corrupti expedita nobis magni asperiores sint at quis deleniti doloribus dolore, eius reiciendis inventore praesentium nam, vel fugiat, consectetur delectus amet! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque porro quo et quis qui delectus atque quia non a deleniti, natus sint, assumenda ducimus veritatis quidem est aliquam odit dolor.
+    Hic, sed! Dicta beatae esse officiis repudiandae consequuntur asperiores veniam sunt laudantium ut, tenetur natus minus atque vel magni quidem placeat, repellat quam cum voluptates autem doloremque numquam! Est, ipsum?</div>
+    <div class="square">안녕하세요</div>
+</body>
+
+</html>
