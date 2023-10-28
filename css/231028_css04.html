@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>231028 수업</title>
+    <style>
+        .parent {
+            position: relative;
+            background-color: white;
+            height: 200px;
+        }
+
+        .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .circle1 {
+            background-color: #9afaff;
+            top: 0;
+            left: 200px;
+        }
+
+        .circle2 {
+            background-color: #84ff8d;
+            top: 0;
+            left: 150px;
+            z-index: 2;
+        }
+
+        .circle3 {
+            background-color: #ffeb88;
+            top: 0;
+            left: 100px;
+            z-index: 3;
+        }
+
+        .circle4 {
+            background-color: #ffb680;
+            top: 0;
+            left: 50px;
+            z-index: 2;
+        }
+
+        .circle5 {
+            background-color: #ff7c7c;
+            top: 0;
+            left: 0;
+        }
+
+        div {
+            background-color: orange;
+            width: 500px;
+            height: 500px;
+        }
+
+        .background-img {
+            background-image: url(https://item.kakaocdn.net/do/d84248170c2c52303db27306a00fb861f604e7b0e6900f9ac53a43965300eb9a);
+            background-repeat: no-repeat;
+            background-position: center;
+            /*x축, y축 순*/
+            background-size: 1000px;
+            background-attachment: scroll;
+        }
+
+        .background-attach {
+            width: 300px;
+            height: 300px;
+            background-image: url(https://item.kakaocdn.net/do/d84248170c2c52303db27306a00fb861f604e7b0e6900f9ac53a43965300eb9a);
+            /* background-attachment: local; */
+            overflow: scroll;
+            /* background-attachment: scroll; */
+            background-attachment: fixed;
+        }
+
+        /* flex-direction */
+         /* justify-content */
+        .container {
+            background-color: #84ff8d;
+            width: 500px;
+            height: 300px;
+            display: flex;
+            /* flex-direction: row;
+            flex-wrap: wrap; */
+            /* justify-content: flex-end;
+            justify-content: center;
+            justify-content: space-evenly;
+        */
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+        }
+
+        .item1 {
+            background-color: red;
+        }
+
+        .item2 {
+            background-color: yellow;
+        }
+        .item3{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+
+        .item4{
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+        .item5{
+            width: 100px;
+            height:100px;
+            background-color: coral;
+        }
+        .container3{
+            flex-wrap: wrap;
+            align-items:center;
+            align-content:center ;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div class="parent">
+        <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
+        <div class="circle circle3"></div>
+        <div class="circle circle4"></div>
+        <div class="circle circle5"></div>
+    </div>
+    <hr>
+
+    <!-- 배경 이미지 -->
+    <div class="background-img"></div>
+    <div class="background-attach">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti expedita minus enim
+        officiis sit, perspiciatis a eos in facilis! A totam sunt blanditiis ducimus culpa eum aperiam in quam
+        inventore?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio aperiam inventore excepturi eligendi
+        earum nobis aliquam dignissimos pariatur perspiciatis delectus laboriosam quam necessitatibus voluptatibus
+        obcaecati consequatur, similique cumque qui libero?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut
+        excepturi natus cupiditate sunt corrupti vitae molestias labore. Dolorum doloremque laudantium explicabo sit
+        odio, pariatur illo, corporis illum reprehenderit facilis eos. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Quas aperiam aliquid recusandae corporis perferendis placeat voluptate sapiente quam numquam!
+        Ipsam cumque magni temporibus suscipit similique in distinctio porro odio alias. Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Magni accusamus excepturi facilis officiis distinctio, illum nobis ullam ipsum rem
+        obcaecati, enim sed illo nihil dignissimos cupiditate est facere fugit adipisci.</div>
+
+        <!-- flex, flex-direction -->
+
+    <div class="container">
+        <div class="item1"></div>
+        <div class="item2"></div>
+        <div class="item1"></div>
+        <!-- <div class="item2"></div>
+        <div class="item1"></div>
+        <div class="item2"></div> -->
+    </div>
+    <hr>
+
+    <div class=" container container3">
+        <div class="item3">3</div>
+        <div class="item4">4</div>
+        <div class="item5">5</div>
+        <div class="item3">3</div>
+        <div class="item4">4</div>
+        <div class="item5">5</div>
+</body>
+
+</html>
