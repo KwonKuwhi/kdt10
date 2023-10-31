@@ -4,6 +4,7 @@
 */
 body {
   width: 100%;
+  overflow: hidden;
 
   animation-name: sky;
   animation-duration: 8s;
@@ -15,11 +16,18 @@ body {
 section {
   width: 700px;
   height: 450px;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-65%,-40%);
 }
 
 section .sky {
   width: 100%;
   height: 100%;
+  position: relative;
+  ;
 
 }
 
@@ -27,7 +35,7 @@ section .sky .sun {
   width: 180px;
   animation-name: sun;
   animation-duration: 8s;
-  animation-timing-function: ease-out;
+  animation-timing-function: linear;
   animation-iteration-count: infinite;
   position: absolute;
   top: 30px;
@@ -39,7 +47,7 @@ section .sky .moon {
   width: 160px;
   animation-name: moon;
   animation-duration: 8s;
-  animation-timing-function: ease-out;
+  animation-timing-function: linear;
   animation-iteration-count: infinite;
   position: absolute;
   top: 30px;
@@ -51,7 +59,7 @@ section .sky .cloud_1 {
   width: 160px;
   animation-name: cloud_1;
   animation-duration: 5.5s;
-  animation-timing-function: ease-out;
+  animation-timing-function: linear;
   animation-iteration-count: infinite;
   position: absolute;
   top: 250px;
@@ -135,44 +143,47 @@ section .city .city_img {
 }
 @keyframes cloud_1{
   0%{
-    left: 300px;
+    left: 40%;
     opacity: 0;
   }
   25%{
+    left: 80%;
     opacity: 1;    
   }
   50%{
-    left: 700px;
+    left: 120%;
     opacity: 0;
   }
   75%{
-
-    opacity: 0.7;
+    left: 80%;
+    opacity: 1;
   }
   100%{
-    left: 300px;
+    left: 40%;
     opacity: 0;    
   }
 
 }
 @keyframes cloud_2{
   0%{
-    left: 200px;
+    left: 30%;
     opacity: 0;
   }
   25%{
+    left: 80%;
     opacity: 1;    
   }
   50%{
-    left: 800px;
+    
+    left: 120%;
     opacity: 0;
   }
   75%{
-
+    left: 80%;
     opacity: 0.7;
   }
   100%{
-    left: 300px;
+    left: 30%;
     opacity: 0;    
   }
 }

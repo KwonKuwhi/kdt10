@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable</title>
+    <script>
+        /*
+        자료형
+        -기본
+            -String
+            -Numbrt
+            -Boolean
+            -Undefined
+        -객체
+            -Array
+            -Object
+            */
+
+        //1. STring 문자열
+        let myNAme = "길동";
+        let email = "gildong@gmil.com"
+        let city = '서울';
+
+        console.log(myNAme);//출력
+        console.log(email);
+        console.log(city);
+
+        //1-1. 문자와 변수를 동시에 쓰고 싶을 떄!
+        console.log("내 이름은", myNAme);
+        console.log("이메일 " + email + " 연락주세요");
+        console.log(`제가 사는 도시는 ${city}입니다.`);
+
+        //2. Number 숫자형
+        let number = 123;
+        let opacity = 0.7;
+
+        console.log(number)
+        console.log(opacity)
+
+        //NaN-> 숫자가 아니다
+
+        //3. Boolean 참,거짓 데이터
+        let checked = true;
+        let isShow = false;
+
+        console.log(checked);
+        console.log(isShow);
+
+        //4. Undefined 미할당 데이터
+        let undef;
+        console.log(undef);
+
+        //5. Null 의도된 빈 데이터
+        let empty = null;
+        console.log(empty);
+
+        //6. Array
+        let fruits = ["orange", "strawberry", "grape", "apple"];
+        let everything = [1, 2, 3, "hello"];
+        console.log(fruits);
+        console.log(everything);
+        console.log(fruits[3]);
+        //2,3차 배열도 가능
+        //push(제일 뒤에 값을 추가)
+        fruits.push("banana");
+        console.log(fruits);
+        //pop->(제일 뒤에 있는 값 삭제)
+        fruits.pop();
+        console.log(fruits);
+        //unshift(추가할 값)->제일 앞에 값을 추가
+        fruits.unshift("orange")
+        console.log(fruits);
+        //shift()->제일 앞에 있는 값을 삭제
+        fruits.shift();
+        console.log(fruits);
+        //indexOf(찾을 값)->매개변수의 인덱스 값을 반환
+        console.log(fruits.indexOf("apple"))
+        //includes(찾을 값)->해당 배열이 그 값을 가지고 있으면 true else false 반환
+        console.log(everything.includes('banana'))
+
+        //7.object={ }
+        let object = {
+            name: '나비',
+            age: 1,
+            isCute: true,
+            mew: function () {
+                return '냐옹';
+            }
+        };
+        console.log(object);
+        console.log(object.mew());
+        console.log(object.name);
+
+        //typeof: 해당 자료형을 반환
+        console.log(typeof "안뇽");
+        console.log(typeof fruits);
+        console.log(typeof null);
+        console.log(typeof 1);
+        console.log(typeof object.isCute);
+        console.log('typeof를 array나 null에 사용하면 ' + typeof {} + ' 결과를 얻을 수 있다.');
+
+
+        //prompt, 형변환
+        //let mathScore = prompt("수학 점수를 입력 하세요");//문자로 저장
+        //let engScore = prompt("영어 점수를 입력 하세요");//문자로 저장
+
+        //let avg=(mathScore + engScore) / 2; //문자열(이어붙인값)을 숫자로 변환
+        
+        //console.log(avg);
+
+
+        //문자형으로 변환//
+        //string은 null과 undefined 에도 문제가 없음
+        //toString은 null과 undefined 에서 문제가 발생함
+
+        let num =123;
+        let str1=true;
+        let str2=null;
+
+        let a = String(num);
+        
+        console.log(typeof a);
+        console.log(typeof String(str2));
+        console.log(typeof a);
+
+        let b = num.toString();
+        console.log(typeof b);
+        //console.log(typeof str2.toString());->오류
+
+        //숫자형으로 변환
+        console.log(Number("123"));
+        console.log(Number("abc"));
+        //boolean도 변환 가능 true는 1로, false는 0으로 변환
+
+
+        //기본 연산자
+        /*
+        대입 연산자:=
+        비교 연산자: ==,!=, ===.>
+        산술 연산자:+, -
+        논리 연산자 !,&&,||
+
+        % 나머지 연산자(짝홀 판별)
+        ** 거듭제곱
+        
+        or 연산자 || 
+        and 연산자 &&
+        not 연산자 !
+        */
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

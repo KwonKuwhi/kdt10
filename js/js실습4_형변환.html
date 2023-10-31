@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>형변환 실습</title>
+</head>
+<body>
+    <script>
+        let mathScore = prompt("수학 점수를 입력 하세요");//문자로 저장
+        let engScore = prompt("영어 점수를 입력 하세요");//문자로 저장
+
+        let avg=(Number(mathScore) + Number(engScore)) / 2; //문자열(이어붙인값)을 숫자로 변환
+        console.log(`수학 점수: ${mathScore}`);
+        console.log(`영어 점수: ${engScore}`);
+        console.log(`평균: ${avg}`);
+    </script>
+</body>
+</html>
