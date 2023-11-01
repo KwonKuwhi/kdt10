@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문 if</title>
+    <script>
+        let age = Number(prompt("나이를 입력하세요."));
+        let gen = prompt("성별을 입력하세요(남/여)");
+
+        if (age >= 20) {
+            console.log('성인 '+gen+'자')
+        } else if (age >= 17) {
+            console.log('고등 '+gen+'학생')
+        } else if (age >= 14) {
+            console.log('중등 '+gen+'학생')
+        } else if (age >= 8) {
+            console.log('초등 '+gen+'학생')
+        } else if (age >= 0) {
+            console.log(gen+'자 유아')
+        } else {
+            console.log("나이를 정확히 입력해주세요.");
+        }
+
+    </script>
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>

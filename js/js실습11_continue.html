@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>break와 continue</title>
+    <script>
+        let num1 = Number(prompt("숫자를 입력해주세요 (1~99)"))
+        let sum1 = 0;
+        // 입력값이 범위에서 벗어나는 경우 alert추가
+        for (let i = 1; i <= num1; i++) {
+            if (i % 2 === 0 || i % 3 === 0) {
+                sum1 += i
+            }
+            // else{
+            //     continue;
+            // }
+        }
+        console.log(`${num1}까지의 숫자 중에서 2또는 3의 배수의 합은  ${sum1}`);
+        let num2 = Number(prompt("숫자를 입력해주세요 (1~99)"));
+        let sum2 = 0;
+        let i = 0;
+        while (i <= num2) {
+            if (i % 2 === 0 || i % 3 === 0) {
+                sum2 += i;
+                i++;
+            }
+            else {
+                i++;
+                continue;
+            }
+        }
+        console.log(sum2);
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

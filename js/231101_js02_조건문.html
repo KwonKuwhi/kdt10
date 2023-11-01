@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문</title>
+    <script>
+        /*
+        if(조건1){
+            //조건1이 참일 때 실행할 코드
+
+        }else if(조건2){
+            //조건 2가 있다면 작성, 조건 2가 참일 때 실행할 코드
+        }else{
+            //위의 모든 조건들이 거짓일 때 실행할 코드
+        }
+*/
+        // if(3 > 5){
+        //     console.log('3 > 5');
+        // } else {
+        //     console.log('3 <= 5');
+        // }
+
+        let name = 'lee';
+        if (name == 'kim') {
+            console.log('name: kim');
+        } else if (name == 'lee') {
+            console.log('name: lee')
+        } else {
+            console.log('name 알 수 없음');
+        }
+
+
+        // switch문
+        /*
+        switch(변수){
+            case 값1:
+                //변수 == 값1일 때 실행할 코드
+                break; // break문을 만나면 switch를 빠져나오겠다.
+            case 값2:
+                //~~코드
+                break;
+            default:
+                //기본적으로 실행할 코드
+        }
+        */
+        switch (name) {
+            case "kim":
+                console.log('name은 kim 입니다');
+                break;
+
+            case 'lee':
+                console.log('name은 lee입니다.');
+                break;
+            default:
+                console.log("kim도 lee도 아니다.");
+        }
+        //3항 연산자
+        name === 'kim' ? console.log("kim") :
+            name === 'lee' ? console.log('lee') :
+                console.log('kim도 lee도 아니다')
+
+        //while문
+        let i = 0;
+        // while (i < 5) {
+        //     console.log('while i:', i);
+        //     i++
+        // }
+        while (true) {
+            console.log('while true i :', i)
+            i++
+            if (i > 5) {
+                break;
+            }
+
+        }
+
+        console.log("------")
+
+        //break와 continue
+        for (let i=0; i<100; i++){
+            if(i==10){
+                console.log('멈춰');
+                break;
+            }
+            console.log(i);
+        }
+
+        for (let i=0; i<15; i++){
+            if(i==10){
+                console.log('멈춰');
+                continue;
+            }
+            console.log(i);
+        }
+        
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

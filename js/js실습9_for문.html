@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for문</title>
+    <script>
+        let limit = Number(prompt("숫자를 입력하세요."));
+        let num=[]
+        for(i=0; i<=limit; i++){
+            if(i%13===0 && i%2===1){
+                num.push(i);
+            }
+        }
+
+        /*
+        for(i=0;i<=limit; i+=13)*/
+        
+        console.log(`입력한 숫자: ${limit} `)
+        console.log(num);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

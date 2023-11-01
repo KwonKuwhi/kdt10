@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+    <script>
+        //함수 호출
+        functionName();
+        //()까지 붙여야 호출됨
+
+        //힘수 선언
+        function functionName(){
+            //함수 선언문
+            console.log('안녕하세요');
+        }
+
+        //함수 표현식
+        let funtionName2 = function() {
+            console.log('안녕하세요2');
+        }
+
+        //함수 호출
+        funtionName2();
+
+        let functionName3 = () =>{
+            console.log('안녕하세요3');
+        }
+
+        //함수 호출
+        functionName3();
+
+        //매개변수가 있는 함수
+        function hello(name, age=15){ //age의 default값
+            //name과 age는 중괄호 안에서만 유효
+            //scope
+            console.log(name+ '님 안녕하세요');
+            console.log(age+'세');
+            return age + 10;
+        }
+        hello('홍길동', 10);
+        let result = hello('홍길동', 10);
+        console.log(result);
+        hello('고길동');
+
+        //onclick
+        function test(){
+            alert('onclick test!');
+        }
+
+
+
+    </script>
+</head>
+<body>
+    <div style="width: 100px; height: 100px; border: 1px solid red;" onclick="test();"> test</div>
+</body>
+</html>
