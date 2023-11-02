@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>method</title>
+    <script>
+        //문자열 관련 메소드
+        let str = ' Happy day~! ';
+
+        //1/ 1ength는 속성, 메소드는 아님 문자열 길이를 반환
+        console.log('length: ', str.length);
+
+        //2/ (영어) 대문자, 소문자 변환
+        console.log('toUpperCase: ', str.toUpperCase());
+        console.log('toLowerCase: ', str.toLowerCase());
+
+        //3/ index를 가져오기
+        console.log('index :', str.indexOf("y"));
+        //중복이 있을 떄 마지막 인덱스 반환
+        console.log('last index :', str.lastIndexOf('y'));
+        console.log("H index:", str.lastIndexOf('H'))
+
+        //4. 문자열 자르기 (첫 번째 매개변수는 필수, 두번째는 선택(두번쨰-1)까지 출력)
+        console.log('slice : ', str.slice(0,6));
+        console.log('slice : ', str.slice(-4));
+
+        //5.바꾸기 
+        //replace: 제일 먼저 나오는 문자를 바꿈.
+        console.log('replace p -> a :' , str.replace('p', 'a'));
+        console.log('replace all a -> k',str.replaceAll('a','k'));
+
+        //6. 반복
+        console.log('repeat :', str.repeat(3));
+        console.log('repeat :', str); //NaN
+
+        //7. split : 문자열을 내가 원하는 부분에서 (매개변수 기준으로 자르고 기준은 사라짐) 자르고, 그걸 배열로 만들어줌
+        console.log('split :',str.split(""));
+        console.log('split :', str.split("a"));
+
+        //8. trim 좌우 공백 제거
+        console.log('trim:',str.trim());
+        console.log('trimX:',str);
+
+        // 배열 메소드
+
+        //join: join 안의 문자열을 사이사이에 넣어서 문자열로 병합
+        let months =["M", "T", "W", "T", "F", "S", "S"];
+        console.log('join: ', months.join());
+        console.log('join: ', months.join(''));
+
+
+
+        //메소드 체이닝_반환 값이 있을 떄만 사용 가능
+        let hello = 'Hello~';
+        helloArr=hello.split('');
+        console.log(helloArr);
+
+        let reverseHello = helloArr.reverse();//배열 뒤집기
+        console.log(reverseHello);
+
+        let helloAgain = reverseHello.join("");//문자열로 변환
+        console.log(helloAgain);
+
+        console.log('메소드 체이닝: ',hello.split("").reverse().join(""));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

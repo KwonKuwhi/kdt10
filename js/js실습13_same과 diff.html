@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>same과diff 배열 만들기</title>
+    <script>
+        let fruits1 = ["사과", "딸기", "파인애플", "수박", "참외", "오렌지", "자두", "망고"];
+        let fruits2 = ["수박", "사과", "참외", "오렌지", "파인애플", "망고","포도"];
+        
+        let same = fruits1.filter(fruit => fruits2.includes(fruit));
+        let diff1 = fruits1.filter(fruit => !fruits2.includes(fruit));
+        let diff2 = fruits2.filter(fruit => !fruits1.includes(fruit));
+        let diff=diff1.concat(diff2);
+        
+        // let same = [];
+        // let diff = [];
+
+        // for(fruit of fruits1){
+        //     if(fruits2.includes(fruit)){
+        //         same.push(fruit);
+        //     }
+        //     else{
+        //         diff.push(fruit);
+        //     }
+        // }
+
+        // for(fruit of fruits2){
+        //     if(! same.includes(fruit)){
+        //         diff.push(fruit);
+        //     }
+        // }
+
+        console.log('same: ',same);
+        console.log('diff: ',diff);
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

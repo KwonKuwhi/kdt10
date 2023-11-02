@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array for 실습</title>
+    <script>
+        let num=[]
+        let forSum=0;
+        let forOfSum=0;
+        let forEachSum=0;
+
+        for(let i=1; i<=100; i++){
+            num.push(i);
+        }
+        console.log('배열:',num);
+
+        for(let j=0; j<num.length; j++){
+            forSum+=num[j];
+        }
+        console.log("for문으로 구한 합: ", forSum);
+
+        for(number of num){
+            forOfSum+=number;
+        }
+        console.log('for of 문으로 구한 합:', forOfSum);
+
+        num.forEach((number) => {
+            forEachSum+=number;
+        });
+        console.log("forEach문으로 구한 합:", forEachSum)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
