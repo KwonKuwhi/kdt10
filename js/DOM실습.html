@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>간단 계산기</title>
+    
+</head>
+
+<body>
+    <h2>계산기</h2>
+    <hr>
+    값1: <input type="text" class='calculator' id="value1"><br>
+    값2: <input type="text"  class='calculator' id="value2"><br>
+    연산자: <input type="text"  class='calculator' id="cal"><br>
+    결과: <input type="text"  class='calculator' id="result"><br><br>
+
+    <button onclick="result()">계산하기</button>
+    <button onclick="reset()">초기화</button>
+
+    <script>
+        function reset(){
+
+            document.getElementById('value1').value="";
+            document.getElementById('value2').value="";
+            document.getElementById('cal').value="";
+            document.getElementById('result').value="";
+        }
+        function result() {
+            let result;
+            let value1 = document.getElementById('value1').value;
+            let value2 = document.getElementById('value2'). value;
+            let cal = document.getElementById('cal').value;
+            switch (cal) {
+                case '+':
+                    result = Number(value1) + Number(value2);
+                    break;
+                case '-':
+                    result = Number(value1) - Number(value2);
+                    break;
+                case '*':
+                    result = Number(value1) * Number(value2);
+                    break;
+                case '/':
+                    result = Number(value1) / Number(value2);
+                    break;
+            }
+            document.getElementById('result').value=result;
+        }
+
+        
+    </script>
+</body>
+
+</html>
