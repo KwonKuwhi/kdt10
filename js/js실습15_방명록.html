@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>방명록 만들기</title>
+    <style>
+        body{
+            line-height: 35px;
+        }
+
+        table{
+            border-width: 2px;
+            border-style: double;
+        }
+        
+        div{
+            line-height: 35px;
+        }
+        .text{
+            display: inline-block;
+            width: 80px;
+        }
+
+        
+    </style>
+    <script>
+        let i=1;
+        function add() {
+            let table=document.getElementById('table');
+            let name=document.getElementById("name").value;
+            let content=document.getElementById("content").value;
+            let date_now=new Date();
+            let Month=date_now.getMonth()+1;
+            console.log(Month);
+            let date=date_now.getFullYear()
+            +'-'
+            +Month
+            +'-'
+            +date_now.getDate()
+            +' '
+            +date_now.getHours()
+            +' : '
+            +date_now.getMinutes();
+
+            let new_tr=document.createElement('tr');
+            new_tr.innerHTML="<td>"+i+"</td><td>"+name+"</td><td>"+content+"</td><td>"+date+"</td>";
+            console.log(new_tr.innerHTML);
+
+            table.appendChild(new_tr);
+            i++;
+
+            // name.value="";
+            // content.value="";
+
+            //초기화 다른 예시
+            let inputs = document.querySelectorAll('input');
+            console.log(inputs);//NodeList
+
+            for(let i =0; i<inputs.length; i++){
+                console.log('for문: ',inputs[i]);
+                //inputs[i] : 위에 name, content 라는 변수로 만들어둔 요소와 동일
+                inputs[i].value='';
+            }
+
+            
+        }
+    </script>
+</head>
+<body>
+    <h3>방명록 입니다.</h3>
+
+    <div>
+        <div class="text">작성자</div>
+        <input type="text" id="name"><br>
+        <div class="text">내용</div>
+        <input type="text" id="content"><br>
+        <button onclick="add()">작성</button>
+    </div>
+    <table id="table" cellpadding="5px" border="1px solid">
+        <tr>
+            <th>번호</th>
+            <th>작성자</th>
+            <th>내용</th>
+            <th>작성일</th>
+        </tr>
+        
+
+    </table>
+</body>
+</html>

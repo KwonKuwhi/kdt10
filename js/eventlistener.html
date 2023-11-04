@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 리스너</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="box">div</div>
+
+    <script>
+        let boxE1 = document.querySelector(".box");
+        console.log(boxE1);
+        boxE1.addEventListener("click",function() {
+            alert("click!");
+        })
+    </script>
+</body>
+</html>
