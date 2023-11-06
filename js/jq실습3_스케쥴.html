@@ -9,6 +9,17 @@
     <title>내 스케줄</title>
 
     <style>
+        @font-face {
+            font-family: 'Pretendard-Regular';
+            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        body {
+            font-family: Pretendard-Regular;
+        }
+
         td {
             width: 100px;
             height: 100px;
@@ -28,12 +39,29 @@
         td>p:hover {
             cursor: pointer;
         }
+
+        td {
+            vertical-align: top;
+        }
+
+        .newSchedule {
+            background-color: rgb(108, 195, 108);
+
+        }
+        .input{
+            line-height: 30px;
+            position: relative;
+            top: 30px;
+            left: 30px;
+        }
+
+
     </style>
 
 </head>
 
 <body>
-    <div>
+    <div class="input">
         날짜 : <input type="text" id="date" readonly /> <br />
         내용 : <input type="text" id="content" /> <br />
         <button type="button" onclick="writeSchedule();">작성</button> <br />
@@ -44,7 +72,7 @@
 
     <br />
 
-    <table align="center" width="500" style="text-align: center">
+    <table align="center" width="500" style="text-align: center; ">
         <tr>
             <th>日</th>
             <th>月</th>
@@ -196,26 +224,29 @@
     </table>
 
     <script>
+        
         $('td > p').on('click', function () {
-            let clickDate=$(this);
-            console.log(clickDate);
+            $(this).addClass("select");
 
-            let date=$(this).text();
+            let date = $(this).text();
+
+            
             $('#date').val(`2022-7-${date}`);
 
         });
 
-        function writeSchedule(){
-            console.log($('#content').val());
+        function writeSchedule() {
+            let content = $('#content').val();
+            
+            $('.select').after(`<div class=newSchedule> ${content}</div>`);
 
-            $('clickDate').append($('#content').val());
-
+            $('.select').removeClass('select');
             $('input').val("");
 
-            
+
         }
 
-        
+
 
     </script>
 </body>
