@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title>이미지 바꾸기</title>
+    <style>
+        @font-face {
+    font-family: 'SOYOMapleBoldTTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/SOYOMapleBoldTTF.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+        body {
+            text-align: center;
+            font-family: SOYOMapleBoldTTF;
+        }
+
+        div {
+            display: inline-block;
+            width: 300px;
+            height: 300px;
+            
+        }
+
+        .img {
+            border: rgb(255, 248, 114) solid 2px;
+            border-radius: 20px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+        }
+
+        img {
+            width: 300px;
+            height: 300px;
+        }
+
+        button {
+            background-color: black;
+            color: white;
+        }
+    </style>
+    <script>
+        function apple() {
+            $('.img').empty();
+            $('.img').append('<img src="./사과.jpeg" alt="사과">');
+
+        }
+        function banana() {
+            $('.img').empty();
+            $('.img').append('<img src="./바나나.jpeg" alt="바나나">');
+
+        }
+        function grape() {
+            $('.img').empty();
+            $('.img').append('<img src="./포도.jpeg" alt="포도">');
+
+        }
+        function peach() {
+            $('.img').empty();
+            $('.img').append('<img src="./복숭아.jpeg" alt="바나나">');
+
+        }
+
+        function changeImg(name) {
+            // img의 src 속성을 변경해주는 함수
+            // 매개변수 이용해서 버튼 구별
+            // name: apple or banan or grape or peach(사진명과 일치하게)
+            //동일한 기능을 하면 하나의 함수로 묶을 수 있음.
+            $('img').attr('src', `./${name}.jpeg`);
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <div class="img">
+            <span style="background-color: yellow;">과일</span>을 골라볼게요
+        </div>
+        <button onclick="apple()">사과</button>
+        <button onclick="banana()">바나나</button>
+        <button onclick="grape()">포도</button>
+        <button onclick="peach()">복숭아</button>
+    </div>
+
+</body>
+
+</html>

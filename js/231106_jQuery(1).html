@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title>jQuery</title>
+    <script>
+        function setValue(){
+            $("#input1").val('setting');
+            // document.getEelementBtId('input').value = 'setting';
+        }
+        function getValue(){
+            alert($('#input1').val());
+        } 
+        function chagneStyle(){
+            $('span').css('font-size', '28px');
+            $('span').css('background-color', 'orange');
+        }
+        function chagneAttr(){
+            $('#input1').attr('placeholder', 'input');
+            // input 요소.setAttribute('placeholder', 'input')
+        }
+        function changeText(){
+            $('span').text('jQuery text~');
+            // span요소. innerText = "jquery text~"
+        }
+        function changeHTML(){
+            // p 요소.innerHTML = "jQuery HTML"
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="input1"></input>
+    <button onclick="setValue()">setValue</button>
+    <button onclick="getValue()">getValue</button>
+    <br>
+    <span style="display: inline-block; width: 100px;">안녕</span>
+    
+    <button onclick="chagneStyle()">changeStyle</button>
+    <button onclick="chagneAttr()">changeAttribute</button>
+    <button onclick="changeText()">changeText</button>
+
+    <p>p태그</p>
+    <button onclick="changeHTML()">changeHTML</button>
+</body>
+</html>
