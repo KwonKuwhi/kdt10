@@ -45,17 +45,16 @@
         }
 
         .newSchedule {
-            background-color: rgb(108, 195, 108);
+            background-color: rgba(108, 195, 108, 0.533);
 
         }
-        .input{
+
+        .input {
             line-height: 30px;
             position: relative;
             top: 30px;
             left: 30px;
         }
-
-
     </style>
 
 </head>
@@ -224,24 +223,26 @@
     </table>
 
     <script>
-        
+
+        let target; // 클릭한 날짜를 기억하기 위한 전역변수
+
         $('td > p').on('click', function () {
-            $(this).addClass("select");
+            target = this;
+            // target에 날짜 기억해두기
 
             let date = $(this).text();
+            // date변수에 클릭한 칸의 text(날짜) 할당 
 
-            
             $('#date').val(`2022-7-${date}`);
-
+            //'2022-7-date' 형태로 input칸에 입력
         });
 
         function writeSchedule() {
             let content = $('#content').val();
-            
-            $('.select').after(`<div class=newSchedule> ${content}</div>`);
+            $(target).parent().append('<div  class="newSchedule">' + content + "</div>");
 
-            $('.select').removeClass('select');
-            $('input').val("");
+            //초기화
+            $('#content').val("");
 
 
         }
