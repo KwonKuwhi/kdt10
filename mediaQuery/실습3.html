@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습3</title>
+    <script src="https://kit.fontawesome.com/837ff3adc1.js" crossorigin="anonymous"></script>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            margin: 0;
+            padding:0;
+            list-style: none;
+        }
+        /*header 스타일링*/
+        header{
+            width: 100%;
+            height: 100px;
+            z-index: 100;
+        }
+        /* header의 경우 z-index를 주는 경우가 많음 가려지면 안되니까 */
+        header .inner {
+            background-color: lightblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        header .inner .logo{
+            position: relative;
+            right: 200px;
+            color: white;
+            font-size: 2rem;
+        }
+        header .inner .menu{
+            display: flex;
+        }
+        header .inner .menu li{
+            margin: 0 10px;
+            font-weight: 800;
+            cursor: pointer;
+        }
+        /* tablet */
+        @media screen and (480px <= width <=1024px){
+            /* 선택자 우선순위로 인해 적용 안될 수 있음
+            선택자는 위랑 똑같이 작성하거나 보다 자세하게 작성해야함 */
+            header{
+                height: max-content;
+            }
+            header .inner {
+                flex-direction: column;
+                align-items: center;
+            }
+            header .inner .logo{
+                position: static;
+                line-height: 60px;
+                height: 60px;
+            }
+            header .inner .menu{
+                width: 100vw;
+                background-color:aliceblue;
+                flex-direction: column;
+                align-items: center;
+            }
+            header .inner .menu li{
+                font-weight: 400;
+                margin: 10px;
+            }
+        }
+
+        /* 
+        display: block으로 다시 만들어보기 
+        click요소는 margin보다 padding을 주는게 좋음
+        margin을 주면 클릭 할 수 있는 범위가 줄어듬*/
+
+        /* 모바일일 */
+
+        @media screen and (max-width:480px){
+            header{
+                height: max-content;
+            }
+            header .inner {
+                flex-direction: column;
+                align-items: center;
+                background-color: palevioletred;
+            }
+            header .inner .logo{
+                position: static;
+                line-height: 45px;
+                height: 45px;
+            }
+            header .inner .menu{
+                width: 100vw;
+                background-color:pink;
+                flex-direction: column;
+                align-items: center;
+            }
+            header .inner .menu li{
+                font-weight: 400;
+                margin: 10px;
+                font-size: 0.8rem;
+            }
+        }
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="inner">
+            <div class="logo">
+                <i class="fa-solid fa-igloo"></i>
+            </div>
+            <ul class="menu">
+                <li>메뉴1</li>
+                <li>메뉴2</li>
+                <li>메뉴3</li>
+                <li>메뉴4</li>
+            </ul>
+        </div>
+    </header>
+</body>
+
+</html>
