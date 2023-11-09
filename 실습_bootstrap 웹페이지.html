@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS 불러오기 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <!-- JS 불러오기 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <title>웹페이지 만들기 실습</title>
+    <style>
+        div {
+            border: 1px solid black;
+        }
+
+        header {
+            width: 100%;
+            height: 100px;
+            background-color: green;
+        }
+
+        header .inner {
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header .menu {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+
+        }
+
+        header .menu li {
+            margin: 0 10px;
+        }
+
+        header .inner .logo {
+            position: relative;
+            right: 200px;
+        }
+
+        header .inner .more {
+            position: relative;
+            left: 300px;
+        }
+
+        .login {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .section1 {
+            margin-top: 40px;
+            height: 300px;
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        .image {
+            width: 300px;
+        }
+
+        .login {
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="inner">
+            <div class="logo"><i class="bi bi-cup-hot-fill"></i></div>
+            <ul class="menu">
+                <li>coffee</li>
+                <li>beverage</li>
+                <li>dessert</li>
+            </ul>
+            <div class="more"><i class="bi bi-list"></i></div>
+
+        </div>
+    </header>
+    <section>
+        <div class="section1">
+            <div class="image">
+                <div id="carouselExample" class="carousel slide">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="..." class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="..." class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="..." class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+
+    </section>
+    <section>
+        <div class="login">
+            <div class="login">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">ID</span>
+                    <input type="text" class="form-control" placeholder="ID" aria-label="password"
+                        aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">password</span>
+                    <input type="text" class="form-control" placeholder="password" aria-label="password"
+                        aria-describedby="basic-addon1">
+                </div>
+                
+            </div>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-primary">로그인</button>
+                <button type="button" class="btn btn-primary">회원가입</button>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
