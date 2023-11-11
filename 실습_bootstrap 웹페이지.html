@@ -15,135 +15,100 @@
 
     <title>웹페이지 만들기 실습</title>
     <style>
-        div {
-            border: 1px solid black;
+        @font-face {
+            font-family: 'Cafe24Supermagic-Bold-v1.0';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/Cafe24Supermagic-Bold-v1.0.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
         }
 
-        header {
-            width: 100%;
-            height: 100px;
-            background-color: green;
+        body {
+            font-family: 'Cafe24Supermagic-Bold-v1.0';
         }
 
-        header .inner {
-            height: 100%;
+        #card-section {
             display: flex;
-            flex-direction: row;
-            align-items: center;
             justify-content: center;
+            margin-bottom: 30px;
         }
 
-        header .menu {
-            list-style: none;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-
-
-        }
-
-        header .menu li {
-            margin: 0 10px;
-        }
-
-        header .inner .logo {
-            position: relative;
-            right: 200px;
-        }
-
-        header .inner .more {
-            position: relative;
-            left: 300px;
-        }
-
-        .login {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .section1 {
-            margin-top: 40px;
-            height: 300px;
-            display: flex;
-            justify-content: space-between;
-
-        }
-
-        .image {
-            width: 300px;
-        }
-
-        .login {
-            width: 200px;
+        #header {
+            font-size: 30px;
         }
     </style>
 </head>
 
 <body>
     <header>
-        <div class="inner">
-            <div class="logo"><i class="bi bi-cup-hot-fill"></i></div>
-            <ul class="menu">
-                <li>coffee</li>
-                <li>beverage</li>
-                <li>dessert</li>
-            </ul>
-            <div class="more"><i class="bi bi-list"></i></div>
-
+        <div class="row ms-5 me-5 mt-5 mb-5" id="header">
+            <div class="col-2"><i class="bi bi-cup-fill"></i></div>
+            <div class="col-3">COFFEE</div>
+            <div class="col-3">BEVERAGE</div>
+            <div class="col-3">STORE</div>
+            <div class="col-1"><i class="bi bi-list"></i></i></div>
         </div>
     </header>
     <section>
-        <div class="section1">
-            <div class="image">
-                <div id="carouselExample" class="carousel slide">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="..." class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="..." class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="..." class="d-block w-100" alt="...">
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+        <div id="card-section">
+            <div class="card me-3" style="width: 18rem;">
+                <img src="https://image.istarbucks.co.kr/img/event/2023/wn_Christmas1_231031_05.jpg"
+                    class="card-img-top" alt="음료 신메뉴" height="450px">
+                <div class="card-body">
+                    <h5 class="card-title">2023 WINTER<br>e-FREAUENCY</h5>
+                    <p class="card-text">미션 음료 3잔 포함 총 17잔의 음료를 구매하시면, 스타벅스 플래너, 라미 스페셜 에디션 또는 스타벅스 캘린더를 드립니다.(6종 중 택1,
+                        한정 수량)</p>
+                    <a href="#" class="btn btn-success">자세히 알아보기</a>
                 </div>
             </div>
-            
+            <div class="card me-3" style="width: 18rem;">
+                <img src="https://image.istarbucks.co.kr/img/event/2023/wn_reserve_christmas_231017_01.jpg"
+                    class="card-img-top mb-1" alt="디저트 신메뉴" height="445px">
+                <div class="card-body">
+                    <h5 class="card-title">리저브 크리스마스 <br>신규 커피 & 원두 출시</h5>
+                    <p class="card-text">CHRISTMAS 2023- 숲 내음 가득한 메이플과 다채로운 향신료의 풍미</p>
+                    <a href="#" class="btn btn-success">자세히 알아보기</a>
+                </div>
+            </div>
+            <div class="card me-3" style="width: 18rem;">
+                <img src="https://image.istarbucks.co.kr/img/event/2023/wn_Christmas1_231031_04.jpg"
+                    class="card-img-top mb-1" alt="원두" height="445px">
+                <div class="card-body">
+                    <h5 class="card-title">크리스마스 프로모션</h5>
+                    <p class="card-text">신선한 라틴 아메리카 원두에 풍부한 인도네시아 원두와 진귀한 숙성 수마트라 원두가 블렌딩 도니 크리스마스 시즌 한정 원두를 소개합니다.</p>
+                    <a href="#" class="btn btn-success">자세히 알아보기</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+
+        <div class="container ">
+            <div class="input-group mb-3 mt-5">
+                <span class="input-group-text" id="basic-addon1">ID</span>
+                <input type="text" class="form-control" placeholder="ID" aria-label="ID"
+                    aria-describedby="basic-addon1">
+            </div>
+
+            <div class="input-group mb-5">
+                <span class="input-group-text" id="basic-addon1">PW</span>
+                <input type="text" class="form-control" placeholder="PW" aria-label="PW"
+                    aria-describedby="basic-addon1">
+            </div>
+            <div class="row">
+                <button type="button" class="col-2 btn btn-success ms-5">LOGIN</button>
+                <button type="button" class="col -2 btn btn-success ms-5">JOIN US</button>
+                <button type="button" class="col-2 btn btn-light ms-5">ID 찾기</button>
+                <button type="button" class="col-3 btn btn-light ms-5">비밀번호 찾기</button>
+            </div>
+
         </div>
 
+
     </section>
-    <section>
-        <div class="login">
-            <div class="login">
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">ID</span>
-                    <input type="text" class="form-control" placeholder="ID" aria-label="password"
-                        aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">password</span>
-                    <input type="text" class="form-control" placeholder="password" aria-label="password"
-                        aria-describedby="basic-addon1">
-                </div>
-                
-            </div>
-            <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-primary">로그인</button>
-                <button type="button" class="btn btn-primary">회원가입</button>
-            </div>
-        </div>
-    </section>
+    <footer>
+
+    </footer>
 </body>
 
 </html>
