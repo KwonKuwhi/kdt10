@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('./component/head',{title:'REGISTER'}) %>
+</head>
+<body>
+    <%- include('./component/header')%>
+    <h1>REGISTER</h1>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="e-mail" aria-label="Username">
+        <span class="input-group-text">@</span>
+        <input type="text" class="form-control" placeholder="gmail.com" aria-label="Server">
+    </div>
+
+    <div class="input-group mb-3">
+<span class="input-group-text" id="basic-addon1">ID</span>
+<input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+
+<button type="button" class="btn btn-primary">ID 검사</button>
+<br>
+<br>
+<div class="input-group mb-3">
+<span class="input-group-text" id="basic-addon1">PW</span>
+<input type="password" class="form-control" placeholder="password" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+<button type="button" class="btn btn-primary">등록하기</button>
+</body>
+</html>
