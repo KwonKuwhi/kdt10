@@ -24,7 +24,7 @@ console.log(mint);
 
 const arr = ['fisrt', 'second'];
 const [one, two]= arr;
-//const [one, two] = ['first', 'second'];
+// const [one, two] = ['first', 'second'];
 console.log(one, two);
 // const one = arr[0];
 // const two = arr[1];

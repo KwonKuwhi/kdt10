@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form 전송</title>
+    <style>
+        fieldset{
+            margin-bottom: 22px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Form</h1>
+    <h2> Get 요청 </h2>
+
+    <form action="/login" method ="get">
+        <label for="id">ID</label>
+        <input type="text" name="id" placeholder="ID" id="id" minlength="3">
+        <label for="pw">PW
+            <input type="password" name="pw" placeholder="PW" id="pw" required>
+        </label>
+
+        <!-- form 태그 안에 있는 버튼 태그는 타입을 지정하지 않으면 type: submit -->
+        <button>제출</button>
+    </form>
+
+    <h2> Post 요청 </h2>
+    <!-- pattern 속성: 폼 요소에 값 입력되었을 때, 그 입력된 값에 대해 검증 -->
+    <!-- required 속성:  폼 요소에 값이 반드시 들어가야하는지 여부를 결정 -->
+
+    <form action="/login" method ="post">
+        <label for="id">ID</label>
+        <input type="text" name="id" placeholder="ID" id="id" pattern="^([a-zA-Z0-9가-힣]){4,10}$" title="아이디는 대소문자, 숫자, 한글로 구성된 4자 이상의 문자여야 합니다." required>
+        <label for="pw">PW
+            <input type="password" name="pw" placeholder="PW" id="pw" pattern="^([a-z0-9]){8,12}$" required>
+        </label>
+        <!-- form 태그 안에 있는 버튼 태그는 타입을 지정하지 않으면 type: submit -->
+        <button>제출</button>
+    </form>
+
+    <h2>js 유효성 검사</h2>
+    <!-- js form 유효성 검사 -->
+    <form action="/js-form-check" method="post" name="valiForm" onsubmit="return checkForm(this)" target="_blank">
+        <input type="text" name="id" minlength="1" placeholder="ID" title="최소 1글자">
+        <span>우편물 수령 장소</span>
+        <input type="checkbox" name="post" value="자택">자택
+        <input type="checkbox" name="post" value="회사">회사
+        <button>제출</button>
+    </form>
+
+<h2>실습1</h2>
+    <form action="/register" method="get" onsubmit="return check(this)">
+        <label for="name" >이름</label>
+        <input type="text" id="name" name="name"  pattern="^([a-z])$">
+        <fieldset>
+            <legend>성별</legend>
+            <input type="radio" value="남자" id="male" name="gender"> 
+            <label for="male">남자</label>
+            <input type="radio" value="여자"  id="female" name="gender"> <label for="female">여자</label>
+        </fieldset>
+        <fieldset>
+            <legend>생년월일</legend>
+            <select name="year" id="year">
+                <optgroup>
+                    <% for (let i= 0; i<50; i++){%>
+                    <option value="<%=2023-i%>"><%=2023-i%></option>
+                <% } %>
+                </optgroup>
+            </select> 
+            <label for="year">년</label>
+            <select name="month" id="month">
+                <optgroup>
+                    <% for (let i= 1; i<=12; i++){%>
+                        <option value="<%=i%>"><%=i%></option>
+                    <% } %>
+
+                </optgroup>
+            </select> 
+            <label for="month">월</label>
+            <select name="date" id="date">
+                <optgroup>
+                    <% for (let i= 1; i<=31; i++){%>
+                        <option value="<%=i%>"><%=i%></option>
+                    <% } %>
+                </optgroup>
+
+            </select>
+            <label for="date">일</label> 
+        </fieldset>
+        <fieldset>
+            <legend>관심사</legend>
+            <input type="checkbox" value="여행" name="interest"> 여행
+            <input type="checkbox" value="패션" name="interest"> 패션
+            <input type="checkbox" value="음식" name="interest"> 음식
+        </fieldset>
+        <button>회원가입</button>
+        
+    </form>
+
+    <h2>실습2</h2>
+    <form action="/register" method="post" onsubmit="return check(this)">
+        <label for="name" >이름</label>
+        <input type="text" id="name" name="name" required>
+        <fieldset>
+            <legend>성별</legend>
+            <input type="radio" value="남자" name="gender"> 남자
+            <input type="radio" value="여자" name="gender"> 여자
+        </fieldset>
+        <fieldset>
+            <legend>생년월일</legend>
+            <select name="year" id="year">
+                <optgroup>
+                    <% for (let i= 0; i<50; i++){%>
+                    <option value="<%=2023-i%>"><%=2023-i%></option>
+                <% } %>
+                </optgroup>
+            </select> 
+            <label for="year">년</label>
+            <select name="month" id="month">
+                <optgroup>
+                    <% for (let i= 1; i<=12; i++){%>
+                        <option value="<%=i%>"><%=i%></option>
+                    <% } %>
+
+                </optgroup>
+            </select> 
+            <label for="month">월</label>
+            <select name="date" id="date">
+                <optgroup>
+                    <% for (let i= 1; i<=31; i++){%>
+                        <option value="<%=i%>"><%=i%></option>
+                    <% } %>
+                </optgroup>
+
+            </select>
+            <label for="date">일</label> 
+        </fieldset>
+        <fieldset>
+            <legend>관심사</legend>
+            <input type="checkbox" value="여행" name="interest"> 여행
+            <input type="checkbox" value="패션" name="interest"> 패션
+            <input type="checkbox" value="음식" name="interest"> 음식
+        </fieldset>
+        <fieldset>
+            <legend>선택</legend>
+            좋아하는 색상<input type="color" name="color"> <br>
+            좋아하는 숫자<input type="number" min="0" max="100" name="number">
+
+        </fieldset>
+        <button>회원가입</button>
+        
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        function checkForm(form){
+            // 1) name으로 폼 선택
+            //const form = document.forms['valiForm'];
+
+            //2) this로 보내서 매개변수로 받기
+            console.log(form);
+
+            if(form.id.value == ''){
+                form.id.focus();
+                alert('아이디를 입력해주세요.');
+
+                return false; // submit 이벤트가 일어나지 않음
+            }
+
+            // 각각의 input 요소의 name 속성값으로 접근
+            if((form.post[0].checked == false)&&(form.post[1].checked == false)){
+                alert("우편물 수령 장소를 선택해 주세요.");
+                return false;
+            }
+        }
+
+        // function check(form){
+        //     if(){
+        //         alert('성별을 선택해주세요');
+        //     }
+        // }
+
+
+    
+    </script>
+</body>
+</html>
