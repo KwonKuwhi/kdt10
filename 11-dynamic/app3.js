@@ -9,19 +9,12 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
 app.get('/',(req, res)=>{
-    res.render('index');
+    res.render('index3');
 })
 
-app.get('/ajax', (req, res)=>{
-    console.log(req.query);
-    res.send(req.query);
-})
-
-app.post('/ajax', (req, res)=>{
-    console.log(req.body);
-    res.send(req.body);
-})
-
+// 실습
+const userId = 'apple';
+const userPw = '1234';
 
 // axios
 
@@ -32,26 +25,23 @@ app.get('/axios', (req, res)=>{
     // res.status(400).send('error msg!')
 })
 
-app.post('/axios',(req,res)=>{
+app.post('/axios2',(req,res)=>{
     console.log(req.body);
-    res.send(req.body);
+    if((req.body.id === userId)&&(req.body.pw === userPw)){
+        res.send({userInfo: req.body, isSuccess:true});
+    }else{
+        res.send({userInfo: req.body, isSuccess:false});
+    }
 })
+    
+    // userId, userPw 라는 변수 값과 클라이언트에서 넘겨받은 값이 일치하는지 검사
+    // 결과 값을 반환
+
+    
 
 
-// fetch
-app.get('/fetch',(req, res)=>{
-    console.log(req.query);
-    res.send(req.query)
-})
 
-app.post('/fetch',(req, res)=>{
-    console.log(req.body);
-    res.send(req.body);
-})
 
-// 실습
-const userId = '홍길동';
-const userPw = '1234';
 
 app.listen(PORT,()=>{
     console.log('sever is openging',PORT);
