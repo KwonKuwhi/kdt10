@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습</title>
+    <!-- jquery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <!-- axios CDN -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <style>
+        div.welcome{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h2>실습1</h2>
+    <form action="/register" method="get" onsubmit="return check(this)"name="register">
+        <label for="name" >이름</label>
+        <input type="text" id="name" name="name"  pattern="^([a-z])$">
+        <fieldset>
+            <legend>성별</legend>
+            <input type="radio" value="남자" id="male" name="gender"> 
+            <label for="male">남자</label>
+            <input type="radio" value="여자"  id="female" name="gender"> <label for="female">여자</label>
+        </fieldset>
+        <fieldset>
+            <legend>생년월일</legend>
+            <select name="year" id="year">
+                <optgroup>
+                    <% for (let i= 0; i<50; i++){%>
+                    <option value="<%=2023-i%>"><%=2023-i%></option>
+                <% } %>
+                </optgroup>
+            </select> 
+            <label for="year">년</label>
+            <select name="month" id="month">
+                <optgroup>
+                    <% for (let i= 1; i<=12; i++){%>
+                        <option value="<%=i%>"><%=i%></option>
+                    <% } %>
+
+                </optgroup>
+            </select> 
+            <label for="month">월</label>
+            <select name="date" id="date">
+                <optgroup>
+                    <% for (let i= 1; i<=31; i++){%>
+                        <option value="<%=i%>"><%=i%></option>
+                    <% } %>
+                </optgroup>
+
+            </select>
+            <label for="date">일</label> 
+        </fieldset>
+        <fieldset>
+            <legend>관심사</legend>
+            <input type="checkbox" value="여행" name="interest"> 여행
+            <input type="checkbox" value="패션" name="interest"> 패션
+            <input type="checkbox" value="음식" name="interest"> 음식
+        </fieldset>
+        <button type="button" onclick="axiosGet()">get 회원가입</button>
+        <div class="welcome"></div>
+    </form>
+
+    <script>
+        let welcomMsg=document.querySelector('.welcome');
+        
+        async function axiosGet() {
+            const form = document.forms['register'];
+            console.log(form.interest)
+            const data ={
+                name: form.name.value,
+                gender: form.gender.value,
+                year: form.year.value,
+                month: form.month.value,
+                date: form.date.value,
+                interest: form.interest.value
+            };
+
+            try{
+                    const response = await axios({
+                        method: 'get',
+                        url: '/axios',
+                        params: data
+                    }) //response : 서버의 응답 결과
+                    const {
+                        name,
+                        gender,
+                        year,
+                        month,
+                        date,
+                        interest
+                    } = response.data;
+
+                    welcomMsg.textContent=`${name}님 환영합니다!성별: ${gender} 생년월일: ${year}년 ${month}월 ${date}일 관심사:${interest}`
+            }catch(err){
+                console.log(err)
+            }
+        }
+
+    </script>
+</body>
+</html>
