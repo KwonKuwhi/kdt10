@@ -20,6 +20,8 @@ const uploadDetail = multer({
             done(null, 'uploads/'); // 파일을 업로드할 경로 설정
         },
         filename(req, file, done) {
+
+            console.log('file name > req.body : ', req.body);
             // 파일의 확장자를 추출 => "path" 모듈 활용
             const ext = path.extname(file.originalname);
             console.log('ext >', ext);
@@ -27,7 +29,7 @@ const uploadDetail = multer({
 
             // path.basename(file.originalname, ext) => apple
             // => 확장자를 제외한 파일이름만
-            done(null, `uploads`  + ext);
+            done(null, req.body.id  + ext);
         }
     }),
     // limits: 파일 제한 정보
@@ -45,6 +47,19 @@ app.use(express.json());
 
 app.get('/',(req, res) =>{
     res.render('index2');
+})
+
+
+app.post('/upload/practice',uploadDetail.single('profile'),(req,res)=>{
+    console.log(req.body);
+    console.log(req.file);
+    res.send('응답');
+})
+
+app.post('/upload/practice2', uploadDetail.single('profile'),(req,res) => {
+    console.log(req.body);
+    console.log(req.file);
+    res.send('회원가입 완료');
 })
 
 

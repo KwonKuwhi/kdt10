@@ -5,15 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>실습1</title>
 </head>
-<body><form action="/upload" method="post" enctype="multipart/form-data">
+<body>
+    <form action="/upload/practice" method="post" enctype="multipart/form-data">
     <input type="text" placeholder="ID" name="id" id="id"><br>
-    <input type="password" placeholder="PW" name="PW" id="PW"><br>
+    <!-- <input type="password" placeholder="PW" name="PW" id="PW"><br>
     <input type="text" placeholder="이름" name="name" id="name"><br>
-    <input type="text" placeholder="나이" name="age" id="age"><br>
+    <input type="text" placeholder="나이" name="age" id="age"><br> -->
 
     <input type="file" name="profile"><br>
-    <button>업로드</button>
+    <button>회원가입</button>
+</form>
+<hr>
+<h2> 동적 폼 전송</h2>
+<form  name="submit">
+    <input type="text" placeholder="ID" name="id" id="id"><br>
+    <!-- <input type="password" placeholder="PW" name="PW" id="PW"><br>
+    <input type="text" placeholder="이름" name="name" id="name"><br>
+    <input type="text" placeholder="나이" name="age" id="age"><br> -->
+
+    <input type="file" name="profile"><br><br>
+    <button type="button" onclick="register()">회원가입</button>
 </form>
     
+
+<script>
+
+    function register(){
+        const form = document.forms['submit'];
+        const formData = new FormData();
+        console.log(form.id)// id 요소
+        console.log(form.profile); // 파일 요소
+
+        console.log(form.profile.files);
+        consoel.log(form.profile.files[0]);
+
+        const fileName = form.profile.files[0].name;
+        const newFile = new File([file] , `${userId}.${ext}`,{
+            type: file.type});
+        const userID = form.id.value;
+
+        // 확장자
+        const ext = form.profile.files[0].name.split('.')[1];
+        console.log('ext >', ext)
+
+        console.log('newFile >', newFile)
+
+
+        // multer 세부설정에서 req.body 를 쓰고 싶다면, 파일을 맨 마지막에 append
+        formData.append('profile', form.profile.files[0]);
+        formData.append('id', form.id.value);
+
+        axios({
+            method: 'post',
+            url: '/upload/practice2',
+            data: FormData,
+            headers: {
+                'Content-Type' :'multipart/form-data',
+            }
+        }).then((res)=>{
+            console.log(res.data);
+        })
+
+    }
+</script>
 </body>
 </html>
