@@ -25,13 +25,16 @@ app.get('/axios', (req, res)=>{
     // res.status(400).send('error msg!')
 })
 
-app.post('/axios2',(req,res)=>{
-    console.log(req.body);
-    if((req.body.id === userId)&&(req.body.pw === userPw)){
-        res.send({userInfo: req.body, isSuccess:true});
-    }else{
-        res.send({userInfo: req.body, isSuccess:false});
+app.post('/axios2', (req, res) => {
+    console.log(req.body); // { userId: 'banana', userPw: '1234' }
+
+    // userId, userPw 라는 변수 값과 클라이언트에서 넘겨받은 값이 일치하는지 검사
+    if (userId === req.body.userId && userPw === req.body.userPw) {
+        res.send({ userInfo: req.body, isSuccess: true });
+    } else {
+        res.send({ isSuccess: false });
     }
+    // 결과 값을 반환
 })
     
     // userId, userPw 라는 변수 값과 클라이언트에서 넘겨받은 값이 일치하는지 검사
