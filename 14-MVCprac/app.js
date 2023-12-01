@@ -8,9 +8,7 @@ app.set('views', './views');
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
-app.get('/',(req, res)=>{
-    res.render('login');
-})
+
 
 
 
@@ -20,5 +18,5 @@ app.use('/', loginRouter);
 
 
 app.listen(PORT,()=>{
-    console.log('sever is openging',PORT);
+    console.log('sever is opening',PORT);
 })
