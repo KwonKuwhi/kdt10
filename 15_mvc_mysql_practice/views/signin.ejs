@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인하기</title>
+
+    <!-- axios CDN-->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  <script defer src="/static/signin.js"></script>
+</head>
+<body>
+    <h1>로그인</h1>
+    <form name="signin">
+        <label for="id">ID</label><input type="text" name="id" id="id"><br>
+        <label for="pw">Password</label><input type="password" name="pw" id="pw"><br>
+        <button type="button" onclick="checkLogin();">LOGIN</button><br>
+        <a href="/signup">REGISTER</a>
+    </form>
+</body>
+</html>

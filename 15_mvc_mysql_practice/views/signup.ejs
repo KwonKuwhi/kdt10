@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+
+       <!-- axios CDN-->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script defer src="/static/signup.js"></script>
+</head>
+<body>
+    <h1>회원가입</h1>
+    <form name="signup">
+        <label for="id">ID
+            <input type="text" name="id" id="id">
+        </label><br>
+        <label for="pw">Password
+            <input type="password" name="pw" id="pw">
+        </label><br>
+        <label for="name">Name
+            <input type="text" name="name" name="name">
+        </label><br>
+        <button type="button" onclick="userRegister();">REGISTER</button><br>
+        <a href="/signin">LOGIN</a>
+    </form>
+</body>
+</html>
