@@ -10,10 +10,15 @@ router.get('/signin', controller.signin);
 
 router.get('/signup', controller.signup);
 
-router.get('/profile', controller.profile);
-
 router.post('/signup',controller.user_register);
 
 router.post('/signin', controller.check_user);
+
+router.post('/profile',controller.post_profile);
+
+router.patch('/profile/edit',controller.edit_profile);
+
+router.delete('/profile/delete', controller.delete_profile);
+
 
 module.exports = router;

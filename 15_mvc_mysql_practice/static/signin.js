@@ -4,7 +4,7 @@ function checkLogin() {
 
     axios({
         method: "POST",
-        url: "/signin",
+        url: "/user/signin",
         data: {
             id: form.id.value,
             pw: form.pw.value
@@ -20,9 +20,14 @@ function checkLogin() {
             alert('비밀번호를 확인해주세요')
             form.reset();
         }else {
-            document.location.href = '/profile';
+            alert('로그인 성공');
+            //profile 페이지 요청 보내기
+            const form_info = document.forms['form_info'];
+            form_info.userId.value = form.id.value;
+            //form_info 제출
+            form_info.submit(); // 일반 폼 전송
 
-    }
+    };
 })
 }
         

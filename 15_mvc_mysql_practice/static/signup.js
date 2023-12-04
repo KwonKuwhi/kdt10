@@ -14,7 +14,7 @@ function userRegister(){
 
     axios({
         method: "POST",
-        url:"/signup",
+        url:"/user/signup",
         data: {
             id: form.id.value,
             pw: form.pw.value,
@@ -23,8 +23,6 @@ function userRegister(){
     }).then((res)=>{
         console.log(res.data); // controller에서 값을 전달받은 후에 확인!
         alert("회원가입 완료!");
-        document.location.href = '/signin';
 
     })
-    
 }

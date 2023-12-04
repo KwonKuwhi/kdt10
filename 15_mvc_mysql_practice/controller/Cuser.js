@@ -11,13 +11,12 @@ exports.signin = (req,res) =>{
 exports.signup = (req,res) =>{
     res.render('signup');
 }
-exports.profile = (req,res) =>{
-    res.render('profile');
-}
 
 exports.user_register = (req,res)=>{
     console.log('controller req.body > ', req.body)// 터미널에서 확인
-    User.userRegister(req.body, ()=>{
+    User.userRegister(req.body, (result)=>{
+        //result=> rows
+        console.log(result);
         res.send(req.body);
     })
     
@@ -35,5 +34,31 @@ exports.check_user = (req,res)=>{
         }else{
             res.send({loginResult:'success', userInfo: req.body});
         }
+    })
+}
+
+exports.post_profile=(req,res)=>{
+    console.log(req.body);
+
+    User.postProfile(req.body.userId,(userInfo)=>{
+        console.log('Cuser.js post_profile>',userInfo);
+        res.render('profile',{info:userInfo[0]});
+    });
+    
+}
+
+// 회원정보 수정 요청
+exports.edit_profile=(req,res)=>{
+    console.log(req.body);
+    User.edit_profile(req.body,()=>{
+
+    })
+}
+// 회원탈퇴 요청
+exports.delete_profile = (req,res) => {
+    console.log(req.body);
+
+    User.delete_profile(req.body.id,(result)=>{
+        res.send({deletedId: req.body.id});
     })
 }
