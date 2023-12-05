@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'Cafe24Supermagic-Bold-v1.0';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/Cafe24Supermagic-Bold-v1.0.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+body{
+    font-family:'Cafe24Supermagic-Bold-v1.0' ;
+}
+h1{
+    
+
+    color: rgb(210, 30, 168);
+}
+
+a{
+    color: black;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 15px;
+    padding: 2px;
+
+}
+a:hover{
+    background-color: rgb(210, 30, 168);
+    color: whitesmoke;
+}
+a:focus{
+    color:black;
+}

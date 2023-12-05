@@ -19,7 +19,7 @@ class House {
     constructor(year, name, window) {
         this.year = year;
         this.name = name;
-        this.window =window;
+        this.window = window;
     }
     // 메소드 1 : 집의 나이를 출력
     getAge() {

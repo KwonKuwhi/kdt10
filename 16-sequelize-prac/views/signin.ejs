@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인하기</title>
+
+    <!-- axios CDN-->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  <script defer src="/static/signin.js"></script>
+</head>
+<body>
+    <h1>로그인</h1>
+
+    <!-- 로그인 성공 시, 프로필 페이지로 이동할 폼 -->
+    <!-- 로그인 버튼 클릭하면 성공시 profile.ejs에서 특정 유저 정보를 보여줘야하기 때문에
+    userid 정보를 value에 저장해서 넘겨줌 -->
+    <form name="form_info" action="/user/profile" method="post">
+        <input type="hidden" name="userId">
+    </form>
+
+
+    <!-- 로그인 폼 -->
+    <form name="signin">
+        <label for="id">ID</label><input type="text" name="id" id="id"><br>
+        <label for="pw">Password</label><input type="password" name="pw" id="pw"><br>
+        <button type="button" onclick="checkLogin();">LOGIN</button><br>
+        <a href="/user/signup">REGISTER</a>
+    </form>
+</body>
+</html>

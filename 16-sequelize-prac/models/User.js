@@ -1,32 +1,29 @@
-// TODO : visitor 모델 정의
-// 테이블 구조를 정의한다 라고 생각
-// 시퀄라이즈 모델이랑 mysql 테이블 연결
 
-const Visitor = (Sequelize, DataTypes)=>{
-    // Sequelize: models/index.js에서의 sequelize
-    // DataTypes: models/index.js에서의 Sequelize
+
+const User = (Sequelize, DataTypes)=>{
+
     
     const model = Sequelize.define(
-        'visitor', //param1: 모델 이름 설정
+        'user', //param1: 모델 이름 설정
         {
             //id int AI PK
             id:{
-                type: DataTypes.INTEGER,
+                type: DataTypes.STRING(20),
                 allowNull: false,
                 primaryKey: true,
-                autoIncrement: true
             },
-            name:{
-                type: DataTypes.STRING(10),
+            pw:{
+                type: DataTypes.INTEGER,
                 allowNull: false,
 
             },
-            comment:{
-                type: DataTypes.TEXT('medium'),
+            name:{
+                type: DataTypes.STRING(10),
+                allowNull: false
             }
         }, //param2: 컬럼 정의
         {
-            tableName:'visitor', //실제 DB테이블이름 명시
+            tableName:'user', //실제 DB테이블이름 명시
             freezeTableName: true, // 첫번째 인자로 넘겨준 모델 이름을 그대로 테이블 이름으로 고정
             // 시퀄라이즈는 기본적으로 테이블 이름을 모델 + s로 가져가요
 
@@ -39,4 +36,5 @@ const Visitor = (Sequelize, DataTypes)=>{
     return model;
 }
 
-module.exports = Visitor;
+module.exports = User;
+

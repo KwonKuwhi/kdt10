@@ -12,7 +12,7 @@ const server = http.createServer(function(req, res){
     const errorFile = fs.readFileSync('./404.html');
     //예외 처리 -> try - catch문
     try{
-    const data = fs.readFileSync('./inde.html');
+    const data = fs.readFileSync('./index.html');
     res.writeHead(200, {'content-type': 'text/html; charset-utf-8'});
     res.write(data);
     res.end();
