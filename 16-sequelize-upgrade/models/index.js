@@ -42,6 +42,11 @@ Player.belongsTo(Team,{
     foreignKey:'team_id',
     targetKey:'team_id'
 })
+// 위의 코드에서 sourceKey와  targetKey를 생략해도 되는 경우?
+// -> 기본 key나 column 명이 다른 경우 생략 안됨
+// ->        ''              같은 경우 생략 가능
+
+
 
 // TODO: 관계 정의한 모델들을 db 객체에 저장
 db.Player = Player;
