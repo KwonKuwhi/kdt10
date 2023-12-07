@@ -88,9 +88,13 @@
       // checkbox.checked === true (체크시); ''
       // checkbox.checked === false (미체크시); 'hide'
 
+
+      // 쿠키 값이 ""일 때만 모달창 열기
+      // 쿠키가 존재하면 -> "hide"이기 때문에 모달 창 안열림
       if('<%= popup %>'===""){
         myModal.show()
       }
+
 
       // TODO: 모달 닫기 버튼 클릭 함수 완성
       function closeModal() {

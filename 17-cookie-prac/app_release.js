@@ -13,6 +13,14 @@ app.use(express.json());
 // TODO: cookie parser 미들웨어 등록
 app.use(cookieParser());
 
+const cookieConfig = {
+  httpOnly : true,
+  maxAge:  30* 1000, // 30초
+  //  24 * 60 * 60 //24시간 
+  signed: true,   // 암호화 쿠키
+
+}
+
 app.get('/', (req, res) => {
 
   console.log('req.cookies.popup >> ', req.cookies.popup);
@@ -25,7 +33,7 @@ app.post('/setcookie', (req, res) => {
   // TODO: 쿠키 생성
   // 쿠키 이름: 'popup', 쿠키 값: 'hide'
 
-  res.cookie('popup','hide');
+  res.cookie('popup','hide',cookieConfig);
   res.send('쿠키 설정 성공!!');
   console.log('req.cookies.popup >> ', req.cookies.popup);
 });
