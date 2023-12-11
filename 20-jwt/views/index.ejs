@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- axios cdn -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Home</title>
+</head>
+<body>
+    <h1>JWT 실습</h1>
+    <div id="info"></div>
+
+    <script>
+        // index.ejs 렌더될 때, 로그인한 유저인지 아닌지 판별
+        // JWT를 이용해서 (토큰)
+        // 토큰이 있다면, 로그인이 된 유저 <-> 토큰이 없다면, 로그인 X
+        // 토큰이 있다면 axios 요청으로 유저 정보를 받아서 띄워줌
+        // 토큰이 없다면 login 페이지 링크를 띄워줌
+        (
+            async function(){
+                const token = localStorage.getItem('login');
+                const infoBox = document.getElementById('info');
+                let data = '';
+                
+
+                try{
+                    if(!token){
+                    data = '<a href="/login">로그인</a>';
+                }else{
+                    const res = await axios({
+                        method: 'POST',
+                        url: '/token',
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        }
+                        // Bearer 방식으로 전송-> 서버에서 결과값을 다시 프론트로 보내줌
+                        // 프론트에서 서버에 정보를 보내서 사용자가 권한이 있는지 없는지 확인
+                        //  보안을 고려해서 토큰을 어디에 사용하면 좋을지 고민
+                        
+                    })
+                    console.log(res.data);
+                    if(res.data.isVerify){
+                        data =`
+                        <p>${res.data.name}님 환영합니다</p>
+                        <button type='button' onclick='logout()'>로그아웃</button>
+                        `;
+
+                    }else{
+                        alert(res.data.msg);
+                    }
+                }
+                infoBox.innerHTML = data;
+
+                }catch(err){
+                    console.log('err',err)
+                }
+                
+            }
+            )
+        
+        //실행하자마자 바로 함수 호출
+        ();
+
+        function logout(){
+            localStorage.clear();
+            document.location.reload();
+        }
+    </script>
+</body>
+</html>
