@@ -32,7 +32,6 @@ app.get('/set',(req,res)=>{
     // 세션 설정  req.session.키= 값
     req.session.name = "홍길동"; // {name: "홍길동"}
     res.send('세션 설정 완료!');
-
 })
 
 app.get('/name',(req,res)=>{
