@@ -73,17 +73,7 @@ exports.postLogin = async (req, res) => {
   // 2-2. 유저 없음
   //    응답 데이터; { result: false, message: '존재하는 사용자가 없습니다' }
 
-  if(user){
-    const result = await bcrypt.compare(pw, user.pw); //true or false
-    if(result){
-      res.send({result: true, data:user});
-    }else{
-      res.send({result: false, message:'비밀번호가 틀렸습니다.'});
-    }
-  }else{
-    res.send({result: false, message:'존재하는 사용자가 없습니다'});
-  }
-};
+}
 
 exports.patchProfile = async (req, res) => {
 

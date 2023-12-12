@@ -1,0 +1,36 @@
+/* 실습 2 채팅창 UI */
+.chat-list{
+    background-color: rgb(160, 211, 255);
+    width: 50%;
+    height: 500px;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.chat-list div {
+    margin-top: 3px;
+}
+
+.chat-list div div{
+    display: inline-block;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.my-chat {
+    text-align: right;
+}
+
+.my-chat div{
+    background-color: yellow;
+}
+
+.other-chat div{
+    background-color: white;
+}
+.notice{
+    color: #005397;
+    text-align: center;
+    font-size: 12px;
+}
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>socket.io 실습 - 채팅</title>
+    <!-- socke.io  CDN -->
+    <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="/static/chat.css">
+</head>
+<body>
+    <main class="chat-box">
+        <div class="chat-list">
+            <!-- 임시 대화 데이터 -->
+            <div class="my-chat">
+                <div> user1 : msg1</div>
+            </div>
+            <div class="other-chat">
+                <div> user2 : msg2</div>
+            </div>
+        </div>
+        
+        <input type="text" id="message">
+        <button type="button" onclick="send()">전송</button>
+        
+    </main>
+
+    <script>
+        // [실습 3]
+
+        const socket = io.connect();
+        
+        socket.on('notice',(msg) => {
+            document.querySelector('.chat-list').insertAdjacentHTML('beforeend',`<div class
+            ="notice">${msg}</div>`);
+        })
+    </script>
+</body>
+</html>
