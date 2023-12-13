@@ -1,6 +1,6 @@
 /* 실습 2 채팅창 UI */
 .chat-list{
-    background-color: rgb(160, 211, 255);
+    background-color: rgb(182, 221, 255);
     width: 50%;
     height: 500px;
     padding: 10px;
@@ -28,9 +28,20 @@
 .other-chat div{
     background-color: white;
 }
+
 .notice{
     color: #005397;
     text-align: center;
     font-size: 12px;
+}
+
+/* [실습 5] */
+.d-none{
+    display: none;
+}
+.secret-chat>div{
+    background-color: pink;
+    padding: 5px;
+    border-radius: 10px;
 }
 

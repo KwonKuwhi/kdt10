@@ -17,7 +17,7 @@ app.set('/views', 'views');//수정(폴더명, 경로)=>수정하지 않아도 �
 
 // 미들웨어 등록
 
-// req.body 객체를 해석할 수 있도록 body=parser 미들웨어 등록
+// req.body 객체를 해석할 수 있도록 body-parser 미들웨어 등록
 app.use(express.urlencoded({extended: true})); //post 요청으로 들어오는 모든 형식의 데이터를 파싱
 
 app.use(express.json()); // json 형식으로 데이터를 주고받음
@@ -52,6 +52,7 @@ app.post('/login', (req, res)=>{
 
 app.post('/js-form-check', (req, res) => {
     console.log(req.body);
+
     res.send('js validation 성공');
 })
 

@@ -9,18 +9,25 @@
     <link rel="stylesheet" href="/static/chat.css">
 </head>
 <body>
-    <main class="chat-box">
+    <input type="text" class="nickname" placeholder="닉네임을 설정해주세요">
+    <button type="button" class="join-btn" onclick="join()">입장</button>
+
+
+    <h1>My Chat</h1>
+    <main class="chat-box d-none">
         <div class="chat-list">
             <!-- 임시 대화 데이터 -->
-            <div class="my-chat">
+            <!-- <div class="my-chat">
                 <div> user1 : msg1</div>
             </div>
             <div class="other-chat">
                 <div> user2 : msg2</div>
-            </div>
+            </div> -->
         </div>
         
-        <input type="text" id="message">
+        <!-- 메세지 전송 영역 -->
+        <select id="user-list"></select>에게
+        <input type="text" id="message" onkeydown="if(window.event.keyCode == 13){send()}">
         <button type="button" onclick="send()">전송</button>
         
     </main>
@@ -29,11 +36,99 @@
         // [실습 3]
 
         const socket = io.connect();
+        let nicname;
         
         socket.on('notice',(msg) => {
             document.querySelector('.chat-list').insertAdjacentHTML('beforeend',`<div class
             ="notice">${msg}</div>`);
         })
+
+        // [실습 4]
+        function send(){
+            const data = {
+                // 전체: all, dm: socket.id
+                dm:document.querySelector('#user-list').value,
+                id: socket.id,
+                nickname: nickname,
+                msg: document.querySelector('#message').value
+                
+            }
+            socket.emit('send', data);
+            document.querySelector('#message').value=""; // input 초기화
+            document.querySelector('#user-list').value="all"
+
+            
+        }
+        // 서버에서 메세지 받아서 보여주기
+        socket.on('newMessage',(data)=>{
+            console.log(data);
+            const chatList = document.querySelector('.chat-list');
+            const div = document.createElement('div'); // 바깥 div
+            const divChat = document.createElement('div'); // 안쪽 div
+
+            if(data.id === socket.id){
+                // 내가 보낸 메세지
+                div.classList.add('my-chat');
+            }else{
+                // 다른 사람이 보낸 메세지
+                div.classList.add('other-chat');
+            }
+
+            if(data.dm){
+                div.classList.add('secret-chat');
+                divChat.textContent = data.dm; //'(DM)'
+            }
+
+            divChat.textContent += `${data.nickname} : ${data.msg}`;
+            div.append(divChat);
+            chatList.append(div);
+
+            // 메세지가 많아져서 스크롤이 생기더라도 하단 고정
+            chatList.scrollTop = chatList.scrollHeight;
+        })
+
+
+
+        // [실습 5]
+
+        // 1. 서버에서 id 값들을 보내줄건데, 채팅방에 입장했다,라고 가정하고 입장 버튼을 만들어줌
+        // 입장하면 서버측에 join 이벤트를 emit
+        // 2. (서버) join 이벤트를 받아서, 전체 socket id 값을 보내기
+        // 3. (클라이언트) 위의 값을 select 안에 추가
+
+
+        function join(){
+            nickname = document.querySelector('.nickname').value;
+            socket.emit('setUserList', {id: socket.id, nickname: nickname})
+        }
+
+        // 입장 성공: 입장 버튼 비활성화, 채팅창 보이기
+        socket.on('entrySuccess',(id)=>{
+            // 버튼 비활성화
+            document.querySelector('.join-btn').disabled = true;
+            document.querySelector('.nickname').disabled = true;
+            // 채팅창 보이기
+            document.querySelector('.chat-box').classList.remove('d-none');
+        })
+
+        // 유저 목록 업데이트(select 박스의 option 태그 개수 변경)
+        socket.on('updateUsers',(userObjs)=>{
+            // userObjs : {socket.id : socket.id, ....}
+            console.log('userList > ',userObjs);
+
+            let options = `<option value='all'>전체<option>`;
+                
+                // todo: userObjs 반복 돌아서 option 태그 추가
+                // option 태그의 value값 -> socket.id값
+                for(let key in userObjs){
+                    // 본인 제외
+                    if(key !== socket.id){
+                        options += `<option value=${key}>${key}</option>`
+                    }
+                }
+
+                document.querySelector('#user-list').innerHTML = options;
+        })
     </script>
 </body>
-</html>
+</html> 
