@@ -1,0 +1,30 @@
+.App {
+  text-align: center;
+  width: 60%;
+  /* background-color: rgb(245, 253, 228); */
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  background-color: rgb(255, 226, 172);
+  color: orange;
+  height: 60px;
+  line-height: 60px;
+  font-size: 30px;
+}
+/* .input {
+  padding: 1rem;
+}
+
+.info {
+  text-align: left;
+  font-weight: 600;
+}
+
+h1 {
+  color: orange;
+} */
