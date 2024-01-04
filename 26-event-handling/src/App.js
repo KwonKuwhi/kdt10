@@ -5,11 +5,12 @@ import SyntheticEvent from './SynthenticEvent';
 import HandleEvent from './components/ex/HandleEx';
 import HandleEx2 from './components/ex/HandleEx2';
 import HandleEx3 from './components/ex/HandleEx3';
+import Prac3 from './Prac3';
 
 function App() {
   return (
     <div className="App">
-      <SyntheticEvent />
+      {/* <SyntheticEvent />
       <hr />
       <ClassBind />
       <hr />
@@ -23,6 +24,11 @@ function App() {
       <hr />
       <h1>실습3</h1>
       <HandleEx3 />
+      <hr /> */}
+      <h1>종합 실습</h1>
+      <Prac3 />
+      <br />
+      <br />
     </div>
   );
 }
