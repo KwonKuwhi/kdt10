@@ -9,7 +9,8 @@ import Prac3 from './ClassPrac3';
 function App() {
   return (
     <div className="App">
-      <Prac3 text="이건 불러온 text 입니다" valid="콘솔 띄우기 성공!" />
+      <Prac3 text="이건 test text 입니다" valid="콘솔 띄우기 성공!" />
+      <Prac3 valid="콘솔 띄우기 성공!" />
       {/* <Food />
       <Food food="떡볶이" /> */}
       {/* <Book

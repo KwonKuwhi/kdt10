@@ -7,7 +7,7 @@ class Prac3 extends Component {
         <h1>{text}</h1>
         <button
           onClick={() => {
-            console.log();
+            console.log(valid);
           }}
         >
           콘솔 메세지
