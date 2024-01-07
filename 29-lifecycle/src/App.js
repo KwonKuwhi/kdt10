@@ -1,23 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import GetPost from './GetPost';
+import LifeCycleClass from './LifeCycleClass';
+import LifeCycleFunc from './LifeCycleFunc';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* 클래스형 컴포넌트 라이프사이클 */}
+      {/* <LifeCycleClass />
+      <hr></hr>
+      <LifeCycleFunc /> */}
+      <hr />
+      <GetPost />
     </div>
   );
 }
