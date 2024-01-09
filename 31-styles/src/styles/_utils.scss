@@ -2,3 +2,32 @@
   width: $size;
   height: $size;
 }
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+@mixin ani($name, $distance) {
+  @keyframes #{$name} {
+    0% {
+      top: 0px;
+      left: 0px;
+    }
+    25% {
+      top: 0px;
+      left: $distance;
+    }
+    50% {
+      top: $distance;
+      left: $distance;
+    }
+    75% {
+      top: $distance;
+      left: 0px;
+    }
+    100% {
+      top: 0px;
+      left: 0px;
+    }
+  }
+}

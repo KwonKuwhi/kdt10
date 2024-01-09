@@ -1,4 +1,3 @@
-import './App.css';
 import GetPost from './GetPost';
 import LifeCycleClass from './LifeCycleClass';
 import LifeCycleFunc from './LifeCycleFunc';

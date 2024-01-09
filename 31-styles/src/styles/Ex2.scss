@@ -1,0 +1,27 @@
+@import './variables.scss';
+@import './utils.scss';
+
+.circle {
+  @include circle(30px);
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  position: relative;
+}
+
+.pink {
+  background-color: pink;
+  @include ani(pinkAni, 100px);
+  animation-name: pinkAni;
+}
+
+.yellow {
+  background-color: yellow;
+  @include ani(yellowAni, 200px);
+  animation-name: yellowAni;
+}
+
+.green {
+  background-color: green;
+  @include ani(greenAni, 300px);
+  animation-name: greenAni;
+}

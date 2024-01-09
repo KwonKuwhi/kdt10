@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PostList from './PostList';
+import './styles/Post.scss';
 
 function GetPost() {
   const fakePosts = [

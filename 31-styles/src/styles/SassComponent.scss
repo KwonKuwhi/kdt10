@@ -66,6 +66,24 @@
 .larva {
   position: relative;
 }
+
+.eye-white {
+  position: absolute;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: rgb(255, 255, 255);
+  top: 30px;
+  left: 10px;
+}
+.eye-black {
+  position: absolute;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: rgb(0, 0, 0);
+  top: 10px;
+}
 .larva .body {
   width: 100px;
   height: 100px;

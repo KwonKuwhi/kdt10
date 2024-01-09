@@ -13,11 +13,7 @@ function Ex1() {
       <div className="body body5"></div>
 
       {/*  process.env.PUBLIC_URL: /public 폴더 경로 */}
-      <img
-        className="grass"
-        src={process.env.PUBLIC_URL + '/images/grass.png'}
-        alt="잔디"
-      />
+      <img className="grass" src={'/grass.png'} alt="잔디" width="650px" />
     </div>
   );
 }
