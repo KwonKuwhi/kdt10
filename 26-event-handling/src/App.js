@@ -13,9 +13,9 @@ function App() {
       {/* <SyntheticEvent />
       <hr />
       <ClassBind />
-      <hr />
+      <hr /> */}
       <Counter />
-      <hr />
+      {/* <hr />
       <h1>실습1</h1>
       <HandleEvent />
       <hr />
@@ -24,11 +24,11 @@ function App() {
       <hr />
       <h1>실습3</h1>
       <HandleEx3 />
-      <hr /> */}
+      <hr />
       <h1>종합 실습</h1>
       <Prac3 />
       <br />
-      <br />
+      <br /> */}
     </div>
   );
 }

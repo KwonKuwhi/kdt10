@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 function Counter() {
   const [number, setNumber] = useState(0);
@@ -32,17 +32,19 @@ function Counter() {
       <h2>{number}</h2>
 
       {/* 함수에 인자가 없는 경우 -> 함수 이름만 전달 */}
+      <h3>함수에 인자가 없는 경우</h3>
       <button onClick={increase}>더하기</button>
 
       {/* 함수에 인자 보내기: 인자가 있는 함수
       익명함수로 감싸서 처리 */}
+      <h3>함수에 인자 보내기</h3>
       <button onClick={() => alertMsg('hello~~')}>alert 출력</button>
       <button onClick={(e) => consoleMsg(e, 'hello!!')}>console 출력</button>
 
       {/* e.target vs e.currentTarget */}
-      <button onClick={handleEvent}>
+      {/* <button onClick={handleEvent}>
         <span>handleEvent</span>
-      </button>
+      </button> */}
     </div>
   );
 }
